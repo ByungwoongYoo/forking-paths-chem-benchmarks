@@ -7,7 +7,19 @@ import matplotlib; matplotlib.use('Agg'); import matplotlib.pyplot as plt
 from pathlib import Path
 ROOT = str(Path(__file__).resolve().parents[1])
 R = pd.read_csv(f'{ROOT}/results/runs.csv')
-P = pd.read_csv(f'{ROOT}/results/per_molecule.csv.gz')
+def load_per_molecule(root):
+    root = Path(root)
+    p_gz = root / 'results' / 'per_molecule.csv.gz'
+    p_csv = root / 'results' / 'per_molecule.csv'
+    parts = sorted((root / 'results').glob('per_molecule_*.csv'))
+    if p_gz.exists():
+        return pd.read_csv(p_gz)
+    if p_csv.exists():
+        return pd.read_csv(p_csv)
+    if parts:
+        return pd.concat([pd.read_csv(p) for p in parts], ignore_index=True)
+    raise FileNotFoundError('missing results/per_molecule.csv(.gz) or per_molecule_*.csv')
+P = load_per_molecule(ROOT)
 DS = ['ESOL', 'FreeSolv', 'Lipophilicity']; SP = ['random', 'scaffold', 'cluster']; FE = ['Morgan2048', 'RDKitDesc']
 out = {}
 
