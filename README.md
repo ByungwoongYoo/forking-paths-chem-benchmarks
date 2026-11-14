@@ -37,7 +37,7 @@ aed41590cb30609d51d8e08ad3ff06495a76e80e211358801f596b10da69bacd  Lipophilicity.
 - FreeSolv: Mobley & Guthrie (2014), file `SAMPL.csv`
 - Lipophilicity: ChEMBL-derived, file `Lipophilicity.csv`
 
-The datasets remain under their own terms. Experiment outputs in `results/` (including `per_molecule.csv`, which stores predictions and nearest-train Tanimoto similarities, not SMILES) are included so the tables can be recomputed without retraining. `code/run_experiments.py` writes the same table as `results/per_molecule.csv.gz`.
+The datasets remain under their own terms. Experiment outputs in `results/` (including the `results/per_molecule_*.csv` files, which store predictions and nearest-train Tanimoto similarities, not SMILES) are included so the tables can be recomputed without retraining. `code/run_experiments.py` writes the same table as `results/per_molecule.csv.gz`.
 
 ## License
 
