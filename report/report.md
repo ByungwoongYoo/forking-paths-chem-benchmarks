@@ -57,12 +57,12 @@ Our main contributions are:
 
 Table 1. Test R² (mean ± sd over 20 split seeds) by split strategy, with the mean of the per-split median nearest-train Tanimoto similarity (random / scaffold / cluster). A larger sd means more room to choose a favourable seed.
 
-![](../figures/fig1_r2_by_split.png)
+![](../figures/fig1_r2_by_split.svg)
 Figure 1. Test R² for the same data and model under random (red), scaffold (blue) and Butina-cluster (green) splits, 20 seeds each. Left group: Morgan fingerprints. Right group: RDKit descriptors.
 
 **Q2: Seed shopping on the "rigorous" split.** Group splits were 1.2 to 3.3 times more variable across seeds than random splits (sd ratio; for example ESOL Morgan cluster sd 0.112 vs. random 0.034). Figure 2 shows the consequence. Reporting the best of K seeds raises the expected reported R² quickly for group splits: from K = 1 to K = 20 by 0.047 to 0.193, against 0.024 to 0.130 for random splits. The best-of-K group-split score matched or exceeded the honest random-split mean in 0 of 12 settings at K = 2, 3 of 12 at K = 5, 5 of 12 at K = 10 and 6 of 12 at K = 20. A reviewer who checks only that a paper "used a scaffold split" therefore cannot tell an honest scaffold number from a shopped one.
 
-![](../figures/fig2_best_of_k.png)
+![](../figures/fig2_best_of_k.svg)
 Figure 2. Expected reported R² when the best of K split seeds is reported (exact order-statistic estimate from 20 observed seeds). Solid lines: Morgan fingerprints. Dashed lines: RDKit descriptors.
 
 **Combined garden.** Table 2 takes the single best of all 120 runs per dataset (3 splits × 20 seeds × 2 feature sets). In every dataset the winner was a random split with RDKit descriptors. It overstated the pre-registered cluster-split mean (best feature set) by 0.059 (ESOL), 0.103 (FreeSolv) and 0.205 (Lipophilicity) R². The worst single runs (0.235, 0.280, 0.199) show the downward range is just as wide.
@@ -77,12 +77,12 @@ Table 2. Reportable range per dataset over 120 runs. "Inflation" = best single r
 
 **Q3: A training-free signal.** Across the 60 split instances per (dataset, features), median NN-sim correlated with test R²: Spearman ρ = 0.645 and 0.557 (ESOL, Morgan / descriptors), 0.369 and 0.388 (FreeSolv) and 0.894 and 0.865 (Lipophilicity), all p < 0.005. Per molecule, mean absolute error fell with NN-sim in all six settings (Figure 3; for example Lipophilicity Morgan MAE 0.964 below 0.3 vs. 0.341 at ≥ 0.9). One exception: on ESOL with Morgan fingerprints, the ≥ 0.9 bin had a higher MAE (1.020) than the 0.8 to 0.9 bin (0.670). We did not check the cause. Duplicate or near-identical fingerprints with differing labels are a plausible explanation.
 
-![](../figures/fig3_error_vs_similarity.png)
+![](../figures/fig3_error_vs_similarity.svg)
 Figure 3. Mean absolute error per test molecule as a function of its maximum Tanimoto similarity to the training set, pooled over seeds. Curves from different split strategies largely overlap, which is what makes reweighting possible.
 
 Because the error-vs-similarity curves overlap across split types, a reader with only random-split errors and the target split's NN-sim histogram can estimate the harder split's RMSE (Figure 4; Appendix Table 3). The mean absolute error of the estimate fell from 0.186 (naive random-split RMSE) to 0.122, and the estimate was closer in 11 of 12 settings (median 55% of the gap closed; above 75% in all four Lipophilicity settings). It failed on FreeSolv with Morgan fingerprints and a cluster target: the estimate overshot by 0.471 RMSE, worse than the naive gap of 0.227. FreeSolv is small (about 129 test molecules), and its low-similarity bin is sparse in random splits, so the bin means there are noisy.
 
-![](../figures/fig4_reweight_audit.png)
+![](../figures/fig4_reweight_audit.svg)
 Figure 4. Predicting group-split RMSE from random-split errors. Grey ×: the naive random-split RMSE. Coloured ○: the similarity-reweighted estimate (blue = scaffold target, green = cluster target). The dotted line is perfect prediction.
 
 ## 5. Discussion and Limitations

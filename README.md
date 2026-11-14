@@ -19,6 +19,8 @@ python3 code/run_experiments.py 20   # writes results/runs.csv and results/per_m
 python3 code/analyze.py              # writes results/table*.csv and figures/fig*.png
 ```
 
+Figures used in the report are in `figures/` as SVG (same pixels as the originals). `analyze.py` also writes PNG files when re-run.
+
 `code/build_report.py` can regenerate the Word document if you place the official Apart sprint template at `report/apart_template_original.docx`. That template is not included here. The finished PDF and Markdown are already in `report/`.
 
 ## Data
@@ -35,7 +37,7 @@ aed41590cb30609d51d8e08ad3ff06495a76e80e211358801f596b10da69bacd  Lipophilicity.
 - FreeSolv: Mobley & Guthrie (2014), file `SAMPL.csv`
 - Lipophilicity: ChEMBL-derived, file `Lipophilicity.csv`
 
-The datasets remain under their own terms. Experiment outputs in `results/` (including `per_molecule.csv.gz`, which stores predictions and nearest-train Tanimoto similarities, not SMILES) are included so the tables can be recomputed without retraining.
+The datasets remain under their own terms. Experiment outputs in `results/` (including `per_molecule.csv`, which stores predictions and nearest-train Tanimoto similarities, not SMILES) are included so the tables can be recomputed without retraining. `code/run_experiments.py` writes the same table as `results/per_molecule.csv.gz`.
 
 ## License
 
