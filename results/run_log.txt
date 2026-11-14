@@ -1,0 +1,12 @@
+{'dataset': 'ESOL', 'n': 1128, 'n_scaffolds': 585, 'n_clusters': 421, 'dup_canonical_smiles': 11}
+ESOL random done 40.0 s
+ESOL scaffold done 75.9 s
+ESOL cluster done 111.8 s
+{'dataset': 'FreeSolv', 'n': 642, 'n_scaffolds': 382, 'n_clusters': 245, 'dup_canonical_smiles': 0}
+FreeSolv random done 16.9 s
+FreeSolv scaffold done 31.9 s
+FreeSolv cluster done 47.0 s
+{'dataset': 'Lipophilicity', 'n': 4200, 'n_scaffolds': 2412, 'n_clusters': 1269, 'dup_canonical_smiles': 0}
+Lipophilicity random done 726.2 s
+Lipophilicity scaffold done 1545.3 s
+Lipophilicity cluster done 2110.2 s
