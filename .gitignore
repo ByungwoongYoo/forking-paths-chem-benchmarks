@@ -1,0 +1,6 @@
+data/*.csv
+__pycache__/
+*.pyc
+.DS_Store
+report/apart_template_original.docx
+report/report.docx
