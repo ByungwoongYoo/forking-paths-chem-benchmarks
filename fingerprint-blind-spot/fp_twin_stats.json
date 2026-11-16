@@ -1,0 +1,86 @@
+{
+ "ESOL": {
+  "n": 1128,
+  "fp_identical_groups": 29,
+  "rows_in_fp_groups": 83,
+  "distinct_structures_in_fp_groups": 18,
+  "fp_group_label_spread_median": 0.242,
+  "fp_group_label_spread_max": 7.16,
+  "fp_groups_spread_ge1": 10,
+  "split_80_10_10_10seeds": {
+   "n_test": 114.0,
+   "n_twin": 8.4,
+   "r2_all": 0.6914859476688825,
+   "r2_no_twin": 0.6909398880747093,
+   "mae_twin": 0.8928341583808136,
+   "mae_rest": 0.8439060910666415
+  },
+  "n_twin_range": [
+   5,
+   12
+  ]
+ },
+ "FreeSolv": {
+  "n": 642,
+  "fp_identical_groups": 14,
+  "rows_in_fp_groups": 39,
+  "distinct_structures_in_fp_groups": 14,
+  "fp_group_label_spread_median": 0.3350000000000001,
+  "fp_group_label_spread_max": 0.7600000000000002,
+  "fp_groups_spread_ge1": 0,
+  "split_80_10_10_10seeds": {
+   "n_test": 65.0,
+   "n_twin": 3.6,
+   "r2_all": 0.6307159084727155,
+   "r2_no_twin": 0.6161294125183847,
+   "mae_twin": 0.333095933201058,
+   "mae_rest": 1.3985583932395138
+  },
+  "n_twin_range": [
+   1,
+   6
+  ]
+ },
+ "Lipophilicity": {
+  "n": 4200,
+  "fp_identical_groups": 93,
+  "rows_in_fp_groups": 202,
+  "distinct_structures_in_fp_groups": 93,
+  "fp_group_label_spread_median": 0.10000000000000009,
+  "fp_group_label_spread_max": 1.5500000000000003,
+  "fp_groups_spread_ge1": 2,
+  "split_80_10_10_10seeds": {
+   "n_test": 420.0,
+   "n_twin": 17.0,
+   "r2_all": 0.5373939457824715,
+   "r2_no_twin": 0.5179635853785612,
+   "mae_twin": 0.26877188417469255,
+   "mae_rest": 0.626960962186398
+  },
+  "n_twin_range": [
+   12,
+   20
+  ]
+ },
+ "BACE": {
+  "n": 1513,
+  "fp_identical_groups": 31,
+  "rows_in_fp_groups": 64,
+  "distinct_structures_in_fp_groups": 31,
+  "fp_group_label_spread_median": 1.2671713000000002,
+  "fp_group_label_spread_max": 3.0314083,
+  "fp_groups_spread_ge1": 20,
+  "split_80_10_10_10seeds": {
+   "n_test": 152.0,
+   "n_twin": 4.4,
+   "r2_all": 0.6771021819242634,
+   "r2_no_twin": 0.6952958962091101,
+   "mae_twin": 1.0764104819751639,
+   "mae_rest": 0.5215456535519093
+  },
+  "n_twin_range": [
+   3,
+   8
+  ]
+ }
+}
