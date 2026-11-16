@@ -2,6 +2,8 @@
 
 This folder measures how often a default Morgan fingerprint (radius 2, 2048 bits) gives *different* molecules the *same* feature vector on public MoleculeNet sets, and what that does to a default random-forest pipeline.
 
+![10 ESOL alcohols share one Morgan bit vector; count fingerprints lift RF test R² from 0.69 to 0.82](fingerprint-blind-spot.svg)
+
 ## Key numbers
 
 Taken from the JSON in this folder (means rounded to three decimals; full precision is in the files):
@@ -21,7 +23,7 @@ python3 dups.py         # writes dup_stats.json and parsed_*.csv
 python3 fix.py          # writes fp_fix_stats.json
 python3 esol_fix.py     # writes fix_r2.json
 python3 fpdup.py        # writes fp_twin_stats.json
-python3 fig3.py         # writes esol_alcohol_collision.csv and fingerprint-blind-spot.png
+python3 fig3.py         # writes esol_alcohol_collision.csv, fingerprint-blind-spot.png and .svg
 ```
 
 `download_data.sh` checks these SHA-256 hashes:

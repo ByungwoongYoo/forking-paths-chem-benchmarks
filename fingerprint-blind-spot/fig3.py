@@ -27,4 +27,5 @@ fig.suptitle('Your fingerprint may not see the molecule',fontsize=28,fontweight=
 fig.text(0.01,0.01,'MoleculeNet ESOL (delaney-processed.csv, DeepChem S3). RDKit Morgan r=2, 2048 bits; RF 200 trees, no tuning. @woongworks',fontsize=12,color='#555')
 fig.tight_layout(rect=[0,0.03,1,0.95])
 fig.savefig('fingerprint-blind-spot.png',dpi=100)
+fig.savefig('fingerprint-blind-spot.svg')
 print(a[['can','nC','y']])
